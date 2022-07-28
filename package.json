@@ -9,7 +9,10 @@
   ],
   "scripts": {
     "prestart:dev": "npm run build -w @ms/calc-app",
-    "start:dev": "npm run build:w -w @ms/calc-app & npm run start:dev -w nestjs"
+    "start:dev": "npm run build:w -w @ms/calc-app & npm run start:dev -w nestjs",
+    "test": "jest",
+    "test:@core": "npm run test -- --projects src/@core",
+    "test:nestjs": "npm run test -- --projects src/nestjs"
   },
   "repository": {
     "type": "git",
