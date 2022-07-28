@@ -34,7 +34,7 @@ describe("Teste de unidade da entidade calculadora", () => {
 
     ]
     arrange.forEach((value) => {
-      const id = value.id as any;
+      const id = value.id || new UniqueEntityId();
       const calculator = new Calculator(value.props, id);
       expect(calculator.id).not.toBeNull();
     });

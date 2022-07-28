@@ -1,14 +1,14 @@
-import { Calculator } from "../../../domain/entities/calculator";
+import { Calculator } from "#calculator/domain/entities/calculator";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import ListCalculatorsUseCase from "../../list-calculators.use-case";
+import ListCalculators from "../../list-calculators.use-case";
 
 describe("Deve testar o caso de uso de pegar dados da operação matemática realizada", () => {
-    let useCase: ListCalculatorsUseCase;
+    let useCase: ListCalculators.UseCase;
     let repository: CalculatorInMemoryRepository;
 
     beforeEach(() => {
         repository = new CalculatorInMemoryRepository();
-        useCase = new ListCalculatorsUseCase(repository);
+        useCase = new ListCalculators.UseCase(repository);
     });
 
     it("deve retornar uma coleção de cálculos vazia", async () => {

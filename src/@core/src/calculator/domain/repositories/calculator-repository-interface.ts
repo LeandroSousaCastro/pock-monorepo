@@ -6,4 +6,6 @@ import { Calculator } from "../entities/calculator";
  * necessidade de especializar alguma funcionalidade de repositório da entidade calculadora.
  * Ex.: Buscar registros por parâmetros específicos ou exclusão lógica.
  */
-export default interface CalculatorRepository extends RepositoryInterface<Calculator> { }
+export interface CalculatorRepository extends RepositoryInterface<Calculator> { }
+
+export default CalculatorRepository;

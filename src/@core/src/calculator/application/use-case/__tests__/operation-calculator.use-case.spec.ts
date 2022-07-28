@@ -1,13 +1,13 @@
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import OperationCalculatorUseCase from "../../operation-calculator.use-case";
+import { OperationCalculator } from "../../operation-calculator.use-case";
 
 describe("Deve testar o caso de uso de operação da calculadora", () => {
-    let useCase: OperationCalculatorUseCase;
+    let useCase: OperationCalculator.UseCase;
     let repository: CalculatorInMemoryRepository;
 
     beforeEach(() => {
         repository = new CalculatorInMemoryRepository();
-        useCase = new OperationCalculatorUseCase(repository);
+        useCase = new OperationCalculator.UseCase(repository);
     });
 
     it("Deve retornar o resultado da operação de adição", async () => {

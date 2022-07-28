@@ -1,15 +1,15 @@
-import { Calculator } from "../../../domain/entities/calculator";
+import { Calculator } from "#calculator/domain/entities/calculator";
 import NotFoundError from "../../../../@seedwork/domain/errors/not-found.error";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import GetCalculatorUseCase from "../../get-calculator.use-case";
+import GetCalculator from "../../get-calculator.use-case";
 
 describe("Deve testar o caso de uso de pegar dados da operação matemática realizada", () => {
-    let useCase: GetCalculatorUseCase;
+    let useCase: GetCalculator.UseCase;
     let repository: CalculatorInMemoryRepository;
 
     beforeEach(() => {
         repository = new CalculatorInMemoryRepository();
-        useCase = new GetCalculatorUseCase(repository);
+        useCase = new GetCalculator.UseCase(repository);
     });
 
     it("deve levantar uma exceção quando não encontrar o registro", async () => {

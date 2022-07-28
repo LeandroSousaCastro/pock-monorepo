@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "imports": {
+    "#seedwork/*": "./dist/@seedwork/*.js",
     "#calculator/*": "./dist/calculator/*.js"
   },
   "exports": {
