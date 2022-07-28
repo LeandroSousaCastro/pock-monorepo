@@ -1,5 +1,5 @@
 import UseCase from "../../@seedwork/application/use-case";
-import Calculator from "../domain/entities/calculator";
+import { Calculator } from "../domain/entities/calculator";
 import CalculatorRepository from "../domain/repositories/calculator-repository-interface";
 
 

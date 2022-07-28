@@ -1,4 +1,4 @@
-import Calculator from "../../../domain/entities/calculator";
+import { Calculator } from "../../../domain/entities/calculator";
 import NotFoundError from "../../../../@seedwork/domain/errors/not-found.error";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
 import GetCalculatorUseCase from "../../get-calculator.use-case";

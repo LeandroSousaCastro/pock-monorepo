@@ -1,5 +1,5 @@
 import { RepositoryInterface } from "../../../@seedwork/domain/repositories/repository-contracts";
-import Calculator from "../entities/calculator";
+import { Calculator } from "../entities/calculator";
 
 /**
  * Visa garantir a especialização da classe, pesando pelos princípios do solid, deve ser implementado caso haja 

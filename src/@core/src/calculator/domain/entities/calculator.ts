@@ -2,14 +2,13 @@ import { EntityValidationError } from "../../../@seedwork/domain/errors/validato
 import Entity from "../../../@seedwork/domain/entities/entity";
 import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
 import CalculatorValidatorFactory from "../validators/calculator-validator";
-
-const Calc = require('expression-calculator');
+import Calc from 'expression-calculator';
 
 export type CalculatorProps = {
   expression: string;
 }
 
-export default class Calculator extends Entity<CalculatorProps> {
+export class Calculator extends Entity<CalculatorProps> {
   private _result: number | undefined;
   constructor(
     public readonly props: CalculatorProps,

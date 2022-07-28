@@ -1,4 +1,4 @@
-import Calculator from "../../../domain/entities/calculator";
+import { Calculator } from "../../../domain/entities/calculator";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
 import ListCalculatorsUseCase from "../../list-calculators.use-case";
 

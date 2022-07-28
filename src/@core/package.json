@@ -1,15 +1,26 @@
 {
-  "name": "calculator",
+  "name": "@ms/calc-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "imports": {
-    "#seedwork/*": "./dist/@seedwork/*.js"
+    "#calculator/*": "./dist/calculator/*.js"
+  },
+  "exports": {
+    "./calculator/domain": "./dist/calculator/domain/index.js"
+  },
+  "typesVersions": {
+    ">=4.0": {
+      "calculator/domain": [
+        "./dist/calculator/domain/index.d.ts"
+      ]
+    }
   },
   "scripts": {
     "ts-node": "ts-node",
     "tsc": "tsc",
     "tsc:check": "npm run tsc -- --noEmit",
+    "build": "tsc -b ./tsconfig.json",
     "test": "jest",
     "test:cov": "npm run test -- --coverage",
     "clean:tsc": "rm tsconfig.tsbuildinfo",

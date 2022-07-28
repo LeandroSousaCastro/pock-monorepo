@@ -1,6 +1,6 @@
 import { EntityValidationError } from "../../../@seedwork/domain";
 import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
-import Calculator from "./calculator";
+import { Calculator } from "./calculator";
 
 describe("Teste de unidade da entidade calculadora", () => {
   it("Deve cria uma entidade calculadora", () => {
