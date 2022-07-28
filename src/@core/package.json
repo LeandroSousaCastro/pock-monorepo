@@ -8,12 +8,20 @@
     "#calculator/*": "./dist/calculator/*.js"
   },
   "exports": {
-    "./calculator/domain": "./dist/calculator/domain/index.js"
+    "./calculator/application": "./dist/calculator/application/index.js",
+    "./calculator/domain": "./dist/calculator/domain/index.js",
+    "./calculator/infra": "./dist/calculator/infra/index.js"
   },
   "typesVersions": {
     ">=4.0": {
+      "calculator/application": [
+        "./dist/calculator/application/index.d.ts"
+      ],
       "calculator/domain": [
         "./dist/calculator/domain/index.d.ts"
+      ],
+      "calculator/infra": [
+        "./dist/calculator/infra/index.d.ts"
       ]
     }
   },

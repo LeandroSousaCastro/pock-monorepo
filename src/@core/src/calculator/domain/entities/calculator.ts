@@ -1,8 +1,8 @@
-import { EntityValidationError } from "#seedwork/domain/errors/validator-error";
-import Entity from "#seedwork/domain/entities/entity";
-import UniqueEntityId from "#seedwork/domain/value-objects/unique-entity-id.vo";
+import { EntityValidationError } from "../../../@seedwork/domain/errors/validator-error";
+import Entity from "../../../@seedwork/domain/entities/entity";
+import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
 import CalculatorValidatorFactory from "../validators/calculator-validator";
-import Calc from 'expression-calculator';
+const Calc = require('expression-calculator');
 
 export type CalculatorProps = {
   expression: string;
@@ -28,7 +28,8 @@ export class Calculator extends Entity<CalculatorProps> {
   }
 
   private calculation(): void {
-    const result = new Calc(this.props.expression).calc();
+    const calc = new Calc();
+    const result = calc.compile(this.props.expression).calc();
     this._result = result;
   }
 

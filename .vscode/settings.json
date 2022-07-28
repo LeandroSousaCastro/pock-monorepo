@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "Export Defaults",
-        "Structure"
+        "Structure",
+        "Nest: Controller"
     ]
 }
