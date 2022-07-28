@@ -10,8 +10,8 @@ export default {
     ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-        "^.+\\.(t|j)s$": "ts-jest"
+    transform: {
+        '^.+\\.(t|j)s$': '@swc/jest',
     },
     "collectCoverageFrom": [
         "**/*.(t|j)s"
