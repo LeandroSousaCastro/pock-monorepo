@@ -5,7 +5,8 @@ RUN mkdir -p /usr/share/man/man1 && \
     apt update && apt install -y \
     git \
     ca-certificates \
-    openjdk-11-jre
+    openjdk-11-jre \
+    procps
 
 RUN npm install -g @nestjs/cli@8.2.8 npm@8.15.0
 

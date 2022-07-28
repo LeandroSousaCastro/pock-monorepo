@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "Export Defaults"
+        "Export Defaults",
+        "Structure"
     ]
 }

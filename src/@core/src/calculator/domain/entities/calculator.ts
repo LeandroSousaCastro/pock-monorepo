@@ -1,6 +1,6 @@
-import { EntityValidationError } from "../../../@seedwork/domain/errors/validator-error";
-import Entity from "../../../@seedwork/domain/entities/entity";
-import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
+import { EntityValidationError } from "#seedwork/domain/errors/validator-error";
+import Entity from "#seedwork/domain/entities/entity";
+import UniqueEntityId from "#seedwork/domain/value-objects/unique-entity-id.vo";
 import CalculatorValidatorFactory from "../validators/calculator-validator";
 import Calc from 'expression-calculator';
 
