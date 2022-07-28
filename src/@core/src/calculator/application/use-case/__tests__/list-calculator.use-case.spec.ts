@@ -1,6 +1,6 @@
 import { Calculator } from "#calculator/domain/entities/calculator";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import ListCalculators from "../../list-calculators.use-case";
+import ListCalculators from "../list-calculators.use-case";
 
 describe("Deve testar o caso de uso de pegar dados da operação matemática realizada", () => {
     let useCase: ListCalculators.UseCase;

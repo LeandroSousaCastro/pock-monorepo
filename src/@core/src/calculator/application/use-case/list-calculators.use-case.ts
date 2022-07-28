@@ -1,5 +1,5 @@
 import { default as DefaultUseCase } from "#seedwork/application/use-case";
-import CalculatorRepository from "../domain/repositories/calculator-repository-interface";
+import CalculatorRepository from "#calculator/domain/repositories/calculator-repository-interface";
 
 export namespace ListCalculator {
     export class UseCase implements DefaultUseCase<null, Output[]> {

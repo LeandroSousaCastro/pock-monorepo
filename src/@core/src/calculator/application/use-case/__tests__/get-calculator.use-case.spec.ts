@@ -1,7 +1,7 @@
 import { Calculator } from "#calculator/domain/entities/calculator";
 import NotFoundError from "../../../../@seedwork/domain/errors/not-found.error";
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import GetCalculator from "../../get-calculator.use-case";
+import GetCalculator from "../get-calculator.use-case";
 
 describe("Deve testar o caso de uso de pegar dados da operação matemática realizada", () => {
     let useCase: GetCalculator.UseCase;

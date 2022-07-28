@@ -1,5 +1,5 @@
 import CalculatorInMemoryRepository from "../../../infra/db/in-memory/calculator-in-memory-repository";
-import { OperationCalculator } from "../../operation-calculator.use-case";
+import { OperationCalculator } from "../operation-calculator.use-case";
 
 describe("Deve testar o caso de uso de operação da calculadora", () => {
     let useCase: OperationCalculator.UseCase;

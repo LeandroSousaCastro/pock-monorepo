@@ -1,6 +1,6 @@
 import { default as DefaultUseCase } from "#seedwork/application/use-case";
-import { Calculator } from "../domain/entities/calculator";
-import CalculatorRepository from "../domain/repositories/calculator-repository-interface";
+import { Calculator } from "#calculator/domain/entities/calculator";
+import CalculatorRepository from "#calculator/domain/repositories/calculator-repository-interface";
 
 export namespace OperationCalculator {
     export class UseCase implements DefaultUseCase<Input, Output> {
