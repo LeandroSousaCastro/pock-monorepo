@@ -3,7 +3,16 @@ import {
   GetCalculator,
   ListCalculator,
 } from '@ms/calc-app/calculator/application';
-import { Controller, Get, Post, Body, Param, Inject } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Inject,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import { OperationCalculatorDto } from './dto/operation-calculator.dto';
 
 @Controller('calculator')
@@ -18,8 +27,18 @@ export class CalculatorController {
   private listUseCase: ListCalculator.UseCase;
 
   @Post()
-  operation(@Body() operationCalculatorDto: OperationCalculatorDto) {
-    return this.operationUseCase.execute(operationCalculatorDto);
+  async operation(@Body() operationCalculatorDto: OperationCalculatorDto) {
+    try {
+      return await this.operationUseCase.execute(operationCalculatorDto);
+    } catch (EntityValidationError) {
+      throw new HttpException(
+        {
+          status: HttpStatus.BAD_REQUEST,
+          error: EntityValidationError.error.expression,
+        },
+        HttpStatus.BAD_REQUEST,
+      );
+    }
   }
 
   @Get()
@@ -28,7 +47,11 @@ export class CalculatorController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.getUseCase.execute({ id });
+  async findOne(@Param('id') id: string) {
+    try {
+      return await this.getUseCase.execute({ id });
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.NOT_FOUND);
+    }
   }
 }

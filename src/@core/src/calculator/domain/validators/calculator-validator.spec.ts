@@ -10,28 +10,65 @@ describe("Testes de CalculatorValidator", () => {
         expect(isValid).toBeFalsy();
         expect(validator.errors['expression']).toStrictEqual([
             'expression should not be empty',
-            'expression must be a string'
+            'expression must be a string',
+            'Expression must be a valid basic mathematical expression.'
         ]);
 
         isValid = validator.validate({ expression: "" });
         expect(isValid).toBeFalsy();
         expect(validator.errors['expression']).toStrictEqual([
             'expression should not be empty',
+            'Expression must be a valid basic mathematical expression.'
         ]);
 
         isValid = validator.validate({ expression: 5 });
         expect(isValid).toBeFalsy();
         expect(validator.errors['expression']).toStrictEqual([
             'expression must be a string',
+            'Expression must be a valid basic mathematical expression.'
         ]);
+
+        const arrange = [
+            { expression: "teste" },
+            { expression: "1++1" },
+            { expression: "1++++1" },
+            { expression: "1+-1" },
+            { expression: "1+-*1" },
+            { expression: "1+-*/1" },
+            { expression: "1-*1" },
+            { expression: "1-/1" },
+        ]
+
+        arrange.forEach(data => {
+            isValid = validator.validate(data);
+            expect(isValid).toBeFalsy();
+            expect(validator.errors['expression']).toStrictEqual([
+                'Expression must be a valid basic mathematical expression.'
+            ]);
+        });
     });
 
     it("deve testear casos válidos de expressões", () => {
         const arrange = [
+            { expression: "1+1" },
+            { expression: "1+ 1" },
+            { expression: "1 +1" },
             { expression: "1 + 1" },
+            { expression: "2-1" },
+            { expression: "2- 1" },
+            { expression: "2 -1" },
             { expression: "2 - 1" },
+            { expression: "2*1" },
+            { expression: "2* 1" },
+            { expression: "2 *1" },
             { expression: "2 * 2" },
-            { expression: "4 / 2" }
+            { expression: "4 / 2" },
+            { expression: "2/1" },
+            { expression: "2/ 1" },
+            { expression: "4 /1" },
+            { expression: "1    +1" },
+            { expression: "1+     1" },
+            { expression: "1+(2+1)" },
         ];
 
         arrange.forEach((value) => {

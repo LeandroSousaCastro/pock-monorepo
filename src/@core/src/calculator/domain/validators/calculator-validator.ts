@@ -1,8 +1,12 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsString, Matches } from "class-validator";
 import { ClassValidatorFields } from "../../../@seedwork/domain/validators/class-validator-fields";
 import { CalculatorProps } from "../entities/calculator";
 
 export class CalculatorRules {
+    @Matches(
+        /(\d)[\s]*([\+\-\*\/])[\s]*(\d)/,
+        { message: "Expression must be a valid basic mathematical expression." }
+    )
     @IsString()
     @IsNotEmpty()
     expression: string | undefined;
