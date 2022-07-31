@@ -34,7 +34,7 @@ export class CalculatorController {
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
-          error: EntityValidationError.error.expression,
+          error: EntityValidationError.error,
         },
         HttpStatus.BAD_REQUEST,
       );
@@ -50,8 +50,14 @@ export class CalculatorController {
   async findOne(@Param('id') id: string) {
     try {
       return await this.getUseCase.execute({ id });
-    } catch (error) {
-      throw new HttpException(error.message, HttpStatus.NOT_FOUND);
+    } catch (NotFoundError) {
+      throw new HttpException(
+        {
+          status: HttpStatus.NOT_FOUND,
+          error: NotFoundError.message,
+        },
+        HttpStatus.NOT_FOUND,
+      );
     }
   }
 }

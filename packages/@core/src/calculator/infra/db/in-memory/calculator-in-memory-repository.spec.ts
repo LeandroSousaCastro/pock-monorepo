@@ -1,4 +1,4 @@
-import { Calculator } from "../../../../calculator/domain/entities/calculator";
+import { Calculator } from "../../../domain/entities/calculator";
 import CalculatorInMemoryRepository from "./calculator-in-memory-repository";
 
 describe("Teste das funcionalidades de repositório em memória da entidade calculadora", () => {

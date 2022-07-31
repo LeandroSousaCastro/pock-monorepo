@@ -11,21 +11,21 @@ describe("Testes de CalculatorValidator", () => {
         expect(validator.errors['expression']).toStrictEqual([
             'expression should not be empty',
             'expression must be a string',
-            'Expression must be a valid basic mathematical expression.'
+            'expression must be a valid basic mathematical expression.'
         ]);
 
         isValid = validator.validate({ expression: "" });
         expect(isValid).toBeFalsy();
         expect(validator.errors['expression']).toStrictEqual([
             'expression should not be empty',
-            'Expression must be a valid basic mathematical expression.'
+            'expression must be a valid basic mathematical expression.'
         ]);
 
         isValid = validator.validate({ expression: 5 });
         expect(isValid).toBeFalsy();
         expect(validator.errors['expression']).toStrictEqual([
             'expression must be a string',
-            'Expression must be a valid basic mathematical expression.'
+            'expression must be a valid basic mathematical expression.'
         ]);
 
         const arrange = [
@@ -43,7 +43,7 @@ describe("Testes de CalculatorValidator", () => {
             isValid = validator.validate(data);
             expect(isValid).toBeFalsy();
             expect(validator.errors['expression']).toStrictEqual([
-                'Expression must be a valid basic mathematical expression.'
+                'expression must be a valid basic mathematical expression.'
             ]);
         });
     });

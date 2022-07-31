@@ -5,7 +5,7 @@
 
 export default {
   projects: [
-    '<rootDir>/src/@core',
-    '<rootDir>/src/nestjs'
+    '<rootDir>/packages/@core',
+    '<rootDir>/packages/nestjs'
   ]
 };

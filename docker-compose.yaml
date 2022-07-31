@@ -3,7 +3,7 @@ version: "3"
 services:
   app:
     build: .
-    container_name: hello-world-monorepo-app
+    container_name: monorepo-app
     command: .docker/start.sh
     volumes:
       - .:/home/node/app

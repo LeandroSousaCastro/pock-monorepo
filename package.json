@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "./src/@core",
-    "./src/nestjs"
+    "./packages/@core",
+    "./packages/nestjs"
   ],
   "scripts": {
     "prestart:dev": "npm run build -w @ms/calc-app",

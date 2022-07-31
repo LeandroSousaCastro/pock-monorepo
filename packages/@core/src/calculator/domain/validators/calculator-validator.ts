@@ -5,7 +5,7 @@ import { CalculatorProps } from "../entities/calculator";
 export class CalculatorRules {
     @Matches(
         /(\d)[\s]*([\+\-\*\/])[\s]*(\d)/,
-        { message: "Expression must be a valid basic mathematical expression." }
+        { message: "expression must be a valid basic mathematical expression." }
     )
     @IsString()
     @IsNotEmpty()
